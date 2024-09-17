@@ -17,19 +17,7 @@ on:
       SmallCaseEnvironment:
         required: true
         type: string
-      DBHostName:
-        required: true
-        type: string
-      DBPort:
-        required: true
-        type: string
-      DBName:
-        required: true
-        type: string
-      DBUserName:
-        required: true
-        type: string
-      
+    
 jobs:
   Deploy_BackEnd:
     runs-on: ubuntu-latest
