@@ -1,0 +1,16 @@
+name: Build and Deploy in Development(BackEnd)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Acabot:
+    uses: ./.github/workflows/backend.yml
+    with:
+      AWSDefaultRegion: us-east-1
+      EnvironmentName: Dev
+      SmallCaseEnvironment: dev
+      ProjectName: Acabot
+      parameters: "EnvironmentName=Dev ProjectName=Acabot PrimaryRegion=us-east-1"
+    secrets: inherit
