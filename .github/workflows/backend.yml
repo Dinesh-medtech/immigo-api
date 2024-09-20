@@ -24,8 +24,8 @@ jobs:
     environment: "Development"
     env:
       AWS_OIDC_ROLE_ARN_NP: "${{ secrets.AWS_OIDC_ROLE_ARN_NP }}"
-      AWS_ACCOUNT_NUMBER_NP: "${{ secrets.AWS_ACCOUNT_NUMBER_NP }}"
-      SERVERLESS_ACCESS_KEY: "${{ secrets.SERVERLESS_ACCESS_KEY }}"
+      # AWS_ACCOUNT_NUMBER_NP: "${{ secrets.AWS_ACCOUNT_NUMBER_NP }}"
+      # SERVERLESS_ACCESS_KEY: "${{ secrets.SERVERLESS_ACCESS_KEY }}"
       AWS_DEFAULT_REGION: ${{ inputs.AWSDefaultRegion }}
       ENV: ${{ inputs.EnvironmentName }}
       SMALLCASEENV: ${{inputs.SmallCaseEnvironment}}
@@ -33,11 +33,7 @@ jobs:
       PARAMETERS: ${{inputs.parameters}}
       AWS_ACCESS_KEY_ID: "${{ secrets.DEV_AWS_ACCESS_KEY_ID }}"
       AWS_SECRET_ACCESS_KEY: "${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}"
-      DB_HOSTNAME: ${{ inputs.DBHostName }}
-      DB_PORT: ${{ inputs.DBPort }}
-      DB_NAME: ${{ inputs.DBName }}
-      DB_USERNAME: ${{ inputs.DBUserName }}
-      DB_PASSWORD: ${{secrets.DB_PASSWORD_NP}}
+    
     permissions:
       id-token: write
       contents: read
@@ -98,8 +94,4 @@ jobs:
           AWS_ACCESS_KEY_ID: "${{ env.role-access-key }}"
           AWS_SECRET_ACCESS_KEY: "${{ env.role-secret-key }}"
           AWS_SESSION_TOKEN: ${{ env.role-session-token }}
-          DBHost : ${{env.DB_HOSTNAME}}
-          DBPort : ${{env.DB_PORT}}
-          DBName : ${{env.DB_NAME}}
-          DBUserName : ${{env.DB_USERNAME}}
-          DBPassword : ${{env.DB_PASSWORD}}
+         
