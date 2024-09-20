@@ -87,7 +87,7 @@ jobs:
       - name: Serverless APIs Deployment
         uses: serverless/github-action@v3.2
         with:
-          args: -c "cd ./packages/backend && node --version && npm install && npm install --save-dev serverless-python-requirements@latest && serverless plugin install -n serverless-python-requirements && python --version && pip install -r requirements.txt && serverless deploy --stage ${{env.SMALLCASEENV}} --param='EnvironmentName=${{ env.ENV }}'"
+          args: -c "node --version && npm install && npm install --save-dev serverless-python-requirements@latest && serverless plugin install -n serverless-python-requirements && python --version && pip install -r requirements.txt && serverless deploy --stage ${{env.SMALLCASEENV}} --param='EnvironmentName=${{ env.ENV }}'"
           entrypoint: /bin/sh
         env:
           LOG_LEVEL: debug
