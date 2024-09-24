@@ -8,12 +8,12 @@ on:
       EnvironmentName:
         required: false
         type: string
-      ProjectName:
-        required: false
-        type: string
-      parameters:
-        required: false
-        type: string
+      # ProjectName:
+      #   required: false
+      #   type: string
+      # parameters:
+      #   required: false
+      #   type: string
       SmallCaseEnvironment:
         required: true
         type: string
@@ -29,8 +29,8 @@ jobs:
       AWS_DEFAULT_REGION: ${{ inputs.AWSDefaultRegion }}
       ENV: ${{ inputs.EnvironmentName }}
       SMALLCASEENV: ${{inputs.SmallCaseEnvironment}}
-      PROJECT_NAME: ${{ inputs.ProjectName }}
-      PARAMETERS: ${{inputs.parameters}}
+      # PROJECT_NAME: ${{ inputs.ProjectName }}
+      # PARAMETERS: ${{inputs.parameters}}
       AWS_ACCESS_KEY_ID: "${{ secrets.DEV_AWS_ACCESS_KEY_ID }}"
       AWS_SECRET_ACCESS_KEY: "${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}"
     
